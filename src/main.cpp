@@ -1,9 +1,114 @@
-#include <Arduino.h>
-void setup() {
-// write your initialization code here
-}
-
-
-void loop() {
-// write your code here
-}
+// /**
+//  * @file main.ino
+//  * @brief MG995 Closed-Loop Axis Control System
+//  * @author SAURAV GAUTAM
+//  * @date 2026-1-7
+//  *
+//  * @details
+//  * Implements PWM-based closed-loop control for MG995 servo motor.
+//  * Accepts angle input via Serial Monitor and validates range (0–180).
+//  */
+//
+// ## 🧠 Code Overview
+//
+// The system uses the `Servo.h` library to generate PWM signals for angular positioning.
+//
+// ### Core Logic Flow
+//
+// 1. Initialize Servo object
+// 2. Attach servo to PWM pin
+// 3. Accept angle input via Serial
+// 4. Validate angle range (0–180°)
+// 5. Write angle to servo
+// 6. Provide serial feedback
+//
+// ---
+//
+// ### Example Code Structure
+//
+// ```cpp
+// /**
+//  * @file main.cpp
+//  * @brief MG995 Closed-Loop Axis Control System
+//  * @author SAURAV GAUTAM
+//  * @date 2026-1-7
+//  *
+//  * @details
+//  * This program implements PWM-based control of MG995 servo motor.
+//  * The system accepts angle input via Serial Monitor and moves
+//  * the servo after validating input range (0–180 degrees).
+//  */
+//
+#include <Servo.h>
+//
+// // TODO 1: Create Servo object
+Servo axisServo;
+//
+// // TODO 2: Define PWM pin (Use pin 9)
+  const int SERVO_PIN = 9;
+//
+// // TODO 3: Create variable to store servo angle
+  int targetAngle = 0;
+//
+// void setup() {
+//
+//     // TODO 4:
+//     // Initialize Serial communication (9600 baud)
+     Serial.begin(9600);
+//
+//     // TODO 5:
+//     // Attach servo to PWM pin
+     axisServo.attach(SERVO_PIN);
+//
+//     // TODO 6:
+//     // Print system initialization message
+     Serial.println("Initialize Servo object");
+     Serial.println("Enter angle");
+// }
+//
+// void loop() {
+//
+//     // TODO 7:
+//     // Check if Serial data is available
+     if (Serial.available() >0) {
+//
+//     // TODO 8:
+//     // Read integer angle input from Serial
+         targetAngle = Serial.parseInt();
+//
+//     // TODO 9:
+//     // Validate angle range (0–180)
+         if (targetAngle >= 0 && targetAngle <= 180) {
+//     // If valid → move servo
+             axisServo.write(targetAngle);
+//     // If invalid → print error message
+//
+//     // TODO 10:
+//     // Print confirmation message after movement
+             Serial.print("Servo moved to: ");
+             Serial.print(targetAngle);
+             Serial.println(" degrees");
+         } } else {
+             Serial.println("Error: Invalid angle! Enter value between 0 and 180.");
+         }
+//
+//     // Clear buffer delay
+//     delay(10);
+// }
+//
+//
+// ---
+//
+// ---
+//
+// ## 🏆 Why This Repository Follows Professional Standards
+//
+// This repository is designed to ensure:
+//
+// - Structured and organized project layout
+// - Clean and properly formatted Markdown documentation
+// - Compatibility with GitHub Classroom workflow
+// - Industry-standard development discipline
+// - Alignment with modern software engineering practices
+//
+// ---

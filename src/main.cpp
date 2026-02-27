@@ -58,7 +58,7 @@ Servo axisServo;
 //
 //     // TODO 5:
 //     // Attach servo to PWM pin
-//     axisServo.attach(SERVO_PIN);
+     axisServo.attach(SERVO_PIN);
 //
 //     // TODO 6:
 //     // Print system initialization message

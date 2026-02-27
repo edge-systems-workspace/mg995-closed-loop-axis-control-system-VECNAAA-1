@@ -62,8 +62,8 @@ Servo axisServo;
 //
 //     // TODO 6:
 //     // Print system initialization message
-//     Serial.println("Initialize Servo object");
-//     Serial.println("Enter angle");
+     Serial.println("Initialize Servo object");
+     Serial.println("Enter angle");
 // }
 //
 // void loop() {

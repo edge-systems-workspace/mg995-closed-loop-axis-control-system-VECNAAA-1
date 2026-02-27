@@ -74,23 +74,23 @@ Servo axisServo;
 //
 //     // TODO 8:
 //     // Read integer angle input from Serial
-//         targetAngle = Serial.parseInt();
+         targetAngle = Serial.parseInt();
 //
 //     // TODO 9:
 //     // Validate angle range (0–180)
-//         if (targetAngle >= 0 && targetAngle <= 180) {
+         if (targetAngle >= 0 && targetAngle <= 180) {
 //     // If valid → move servo
-//             axisServo.write(targetAngle);
+             axisServo.write(targetAngle);
 //     // If invalid → print error message
 //
 //     // TODO 10:
 //     // Print confirmation message after movement
-//             Serial.print("Servo moved to: ");
-//             Serial.print(targetAngle);
-//             Serial.println(" degrees");
-//         } } else {
-//             Serial.println("Error: Invalid angle! Enter value between 0 and 180.");
-//         }
+             Serial.print("Servo moved to: ");
+             Serial.print(targetAngle);
+             Serial.println(" degrees");
+         } } else {
+             Serial.println("Error: Invalid angle! Enter value between 0 and 180.");
+         }
 //
 //     // Clear buffer delay
 //     delay(10);
